@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/buslykbohdana-del/lab3-menu/issues"
   },
-  "homepage": "https://github.com/buslykbohdana-del/lab3-menu#readme"
+  "homepage": "https://github.com/buslykbohdana-del/lab3-menu#readme",
+  "dependencies": {
+    "commander": "^15.0.0"
+  }
 }
