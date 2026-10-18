@@ -145,5 +145,52 @@ program
       console.log(result.value);
     }
   });
+// === БЛОК 3: команди варіанта category, filter, search ===
+program
+  .command('category')
+  .description('показати страви однієї категорії')
+  .argument('<name>', 'назва категорії, напр. Супи (з пробілами в лапках)')
+  .action((name) => {
+    const { dishes } = loadData();
+    const wanted = name.toLowerCase();
+    const found = dishes.filter((d) => d.category.toLowerCase() === wanted);
+    if (found.length === 0) {
+      const categories = [...new Set(dishes.map((d) => d.category))];
+      fail(`категорії «${name}» немає. Доступні: ${categories.join(', ')}.`);
+    }
+    printDishes(found);
+  });
 
+program
+  .command('filter')
+  .description('відібрати страви за позначками та/або граничною ціною')
+  .option('-t, --tag <tag>', 'позначка (можна повторювати; страва має мати всі)', collect, [])
+  .option('-p, --max-price <n>', 'гранична ціна в грн (включно)', parsePrice)
+  .option('-a, --available', 'показати лише страви, які є в наявності')
+  .action((options) => {
+    const { tag: tags, maxPrice, available } = options;
+    if (tags.length === 0 && maxPrice === undefined && !available) {
+      fail('вкажіть хоча б одну умову: --tag, --max-price або --available.');
+    }
+    const { dishes } = loadData();
+    const found = dishes.filter((d) => 
+      tags.every((t) => d.tags.includes(t.toLowerCase())) &&
+      (maxPrice === undefined || d.price <= maxPrice) &&
+      (!available || d.available)
+    );
+    printDishes(found, 'Страв за цими умовами не знайдено.');
+  });
+
+program
+  .command('search')
+  .description('знайти страви за інгредієнтом')
+  .argument('<ingredient>', 'інгредієнт або його частина, напр. гриби')
+  .action((ingredient) => {
+    const { dishes } = loadData();
+    const part = ingredient.toLowerCase();
+    const found = dishes.filter((d) => 
+      d.ingredients.some((i) => i.toLowerCase().includes(part))
+    );
+    printDishes(found, `Страв з інгредієнтом «${ingredient}» не знайдено.`);
+  });
 program.parse();
