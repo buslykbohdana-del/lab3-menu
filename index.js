@@ -193,4 +193,26 @@ program
     );
     printDishes(found, `Страв з інгредієнтом «${ingredient}» не знайдено.`);
   });
-program.parse();
+// === БЛОК 4: запуск і обробка помилок ===
+try {
+  program.parse();
+} catch (err) {
+  if (err instanceof CommanderError) {
+    const okCodes = ['commander.helpDisplayed', 'commander.help', 'commander.version'];
+    if (okCodes.includes(err.code)) process.exit(err.exitCode);
+    
+    const texts = {
+      'commander.unknownOption': 'невідома опція',
+      'commander.unknownCommand': 'невідома команда',
+      'commander.missingArgument': 'не вказано обов\'язковий аргумент',
+      'commander.optionMissingArgument': 'не вказано значення для опції',
+      'commander.excessArguments': 'забагато аргументів для команди'
+    };
+    
+    const quoted = err.message.match(/'([^']+)'/);
+    const detail = quoted ? ` «${quoted[1]}»` : '';
+    
+    fail(`${texts[err.code] ?? 'некоректний виклик програми'}${detail}. Довідка: node index.js --help`);
+  }
+  fail(err.message);
+}
