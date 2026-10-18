@@ -1,0 +1,21 @@
+{
+  "name": "lab3-menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buslykbohdana-del/lab3-menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/buslykbohdana-del/lab3-menu/issues"
+  },
+  "homepage": "https://github.com/buslykbohdana-del/lab3-menu#readme"
+}
