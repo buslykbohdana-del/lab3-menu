@@ -1,0 +1,15 @@
+{
+  "restaurant": {"name": "Ресторан «Смак»", "city": "Львів"},
+  "dishes": [
+    {"id":1,"name":"Борщ український","category":"Супи","price":120,"weight":350,"tags":["gluten-free"],"ingredients":["буряк","капуста","картопля","морква","яловичина","сметана"],"nutrition":{"calories":280,"protein":14,"fat":12,"carbs":28},"available":true},
+    {"id":2,"name":"Грибний крем-суп","category":"Супи","price":110,"weight":300,"tags":["vegetarian"],"ingredients":["гриби","вершки","картопля","цибуля"],"nutrition":{"calories":240,"protein":6,"fat":16,"carbs":18},"available":true,"discount":null},
+    {"id":3,"name":"Цезар з куркою","category":"Салати","price":165,"weight":250,"tags":[],"ingredients":["курка","салат романо","пармезан","сухарики","соус цезар"],"nutrition":{"calories":390,"protein":28,"fat":24,"carbs":15},"available":true},
+    {"id":4,"name":"Грецький салат","category":"Салати","price":130,"weight":230,"tags":["vegetarian","gluten-free"],"ingredients":["огірок","помідор","фета","оливки","оливкова олія"],"nutrition":{"calories":210,"protein":7,"fat":17,"carbs":9},"available":true},
+    {"id":5,"name":"Вареники з картоплею","category":"Основні страви","price":135,"weight":300,"tags":["vegetarian"],"ingredients":["борошно","картопля","цибуля","сметана"],"nutrition":{"calories":420,"protein":10,"fat":12,"carbs":66},"available":true},
+    {"id":6,"name":"Стейк рібай","category":"Основні страви","price":480,"weight":300,"tags":["gluten-free"],"ingredients":["яловичина","сіль","перець","розмарин"],"nutrition":{"calories":650,"protein":52,"fat":48,"carbs":1},"available":false},
+    {"id":7,"name":"Паста з овочами","category":"Основні страви","price":150,"weight":320,"tags":["vegan","vegetarian"],"ingredients":["макарони","помідор","цукіні","часник","оливкова олія"],"nutrition":{"calories":370,"protein":11,"fat":9,"carbs":60},"available":true},
+    {"id":8,"name":"Том ям","category":"Супи","price":210,"weight":400,"tags":["spicy","gluten-free"],"ingredients":["креветки","кокосове молоко","гриби","лемонграс","чилі"],"nutrition":{"calories":310,"protein":22,"fat":18,"carbs":14},"available":true},
+    {"id":9,"name":"Чізкейк","category":"Десерти","price":105,"weight":140,"tags":["vegetarian"],"ingredients":["сир","вершки","печиво","цукор","яйця"],"nutrition":{"calories":410,"protein":7,"fat":27,"carbs":36},"available":true},
+    {"id":10,"name":"Лимонад домашній","category":"Напої","price":70,"weight":400,"tags":["vegan","gluten-free"],"ingredients":["лимон","цукор","вода","м’ята"],"nutrition":{"calories":120,"protein":0,"fat":0,"carbs":30},"available":true}
+  ]
+}
